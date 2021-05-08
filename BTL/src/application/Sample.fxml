@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <MenuBar layoutX="0.0" layoutY="0.0" prefHeight="25.0" prefWidth="1000.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="25.0" prefHeight="575.0" prefWidth="1000.0">
+        <items>
+          <AnchorPane>
+               <children>
+                  <TitledPane prefHeight="250.0" prefWidth="290.0" text="In, thêm, sửa, xóa cán bộ">
+                     <content>
+                        <AnchorPane prefHeight="225.0" prefWidth="290.0">
+                           <children>
+                              <AnchorPane prefHeight="125.0" prefWidth="275.0">
+                                 <children>
+                                    <TextField fx:id="fullNameTextField" layoutX="15.0" prefHeight="25.0" prefWidth="250.0" promptText="Nhập tên" />
+                                    <TextField fx:id="typeTextField" layoutX="15.0" layoutY="75.0" prefWidth="250.0" promptText="Nhập loại cán bộ" />
+                                    <TextField fx:id="IDTextField" layoutX="15.0" layoutY="25.0" prefWidth="250.0" promptText="Nhập ID" />
+                                    <TextField fx:id="workProgressColTextField" layoutX="15.0" layoutY="100.0" prefWidth="250.0" promptText="Nhập tiến độ" />
+                                    <DatePicker fx:id="birthdayDatePicker" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="250.0" promptText="Chọn ngày" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutY="125.0" prefHeight="75.0" prefWidth="275.0">
+                                 <children>
+                                    <Button layoutX="150.0" layoutY="45.0" mnemonicParsing="false" onAction="#buttonFix" text="Thay cán bộ" />
+                                    <Button layoutX="150.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonRemove" text="Xóa cán bộ" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonPrint" text="In danh sách" />
+                                    <Button layoutX="10.0" layoutY="45.0" mnemonicParsing="false" onAction="#buttonAdd" text="Thêm cán bộ" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" layoutY="250.0" prefHeight="325.0" prefWidth="290.0" text="Tìm kiếm nhân viên">
+                    <content>
+                        <AnchorPane layoutX="18.0" layoutY="18.0" prefHeight="125.0" prefWidth="275.0">
+                           <children>
+                              <TextField fx:id="fullNameTextField1" layoutX="15.0" prefHeight="25.0" prefWidth="250.0" promptText="Nhập tên" />
+                              <TextField fx:id="typeTextField1" layoutX="15.0" layoutY="75.0" prefWidth="250.0" promptText="Nhập loại cán bộ" />
+                              <TextField fx:id="IDTextField1" layoutX="15.0" layoutY="25.0" prefWidth="250.0" promptText="Nhập ID" />
+                              <TextField fx:id="workProgressColTextField1" layoutX="15.0" layoutY="100.0" prefWidth="250.0" promptText="Nhập tiến độ" />
+                              <DatePicker fx:id="birthdayDatePicker1" layoutX="15.0" layoutY="50.0" prefHeight="25.0" prefWidth="250.0" promptText="Chọn ngày" />
+                              <Button layoutX="150.0" layoutY="215.0" mnemonicParsing="false" onAction="#buttonSearch" text="In danh sách" />
+                              <Button layoutX="15.0" layoutY="215.0" mnemonicParsing="false" onAction="#buttonRefresh" text="refresh" />
+                              <CheckBox fx:id="checkBoxBigger" layoutX="15.0" layoutY="133.0" mnemonicParsing="false" text="Tiến độ lớn hơn" />
+                              <CheckBox fx:id="checkBoxSmaller" layoutX="15.0" layoutY="150.0" mnemonicParsing="false" text="Tiến độ nhỏ hơn" />
+                              <CheckBox fx:id="checkBoxBonus" layoutX="15.0" layoutY="167.0" mnemonicParsing="false" text="Có khen thưởng" /> 
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane>
+               <children>
+                  <TableView fx:id="tableView" prefHeight="575.0" prefWidth="700.0">
+                    <columns>
+                      <TableColumn fx:id="fullNameCol" minWidth="200.0" prefWidth="75.0" text="fullName" />
+                      <TableColumn fx:id="IDCol" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="birthDayCol" minWidth="100.0" prefWidth="75.0" text="birthDay" />
+                        <TableColumn fx:id="typeCol" minWidth="150.0" prefWidth="75.0" text="type" />
+                        <TableColumn fx:id="workProgressCol" minWidth="100.0" prefWidth="75.0" text="workProgress" />
+                        <TableColumn fx:id="bonusCol" prefWidth="75.0" text="bonus" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

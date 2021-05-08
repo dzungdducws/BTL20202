@@ -1,0 +1,6 @@
+form (String fullName, String ID, birthDay(d/MM/yyyy), int type, int workProgress)
+Nguyễn Đức Dũng, GV1, 12/01/2001, 1, 400
+La Thành Long, PV1, 23/12/1999, 3, 423
+Vũ Hồng Sơn, GV1, 12/01/2001, 2, 400
+Nguyễn Đức Dũng, GV1, 12/01/2001, 1, 400
+La Thành Long, PV1, 23/12/1999, 2, 4232q
